@@ -11,11 +11,15 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.ReadKey();
-
-            Console.WriteLine("Beghinning to read from COMM Port:");
-            PortReadingService portReadingService = new PortReadingService();
-            portReadingService.ParallelProcessAllPorts();
+            string stop = "";
+            while("stop" != stop.ToLowerInvariant())
+            {
+                Console.WriteLine("Beginning to process any available COMM port:");
+                PortReadingService portReadingService = new PortReadingService();
+                portReadingService.ParallelProcessAllPorts();
+                Console.WriteLine();
+                stop = Console.ReadLine();
+            }
         }
     }
 }
