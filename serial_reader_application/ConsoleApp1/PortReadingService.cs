@@ -35,7 +35,7 @@ namespace ConsoleApp1
             {
                 string portName = activePort.PortName;
                 Console.WriteLine("PortReadingService: Preparing " +
-                    "to read from port {} verifying its open."
+                    "to read from port {0} verifying its open."
                     , portName);
                 RetrieveDataFromActivePort(activePort, portName);
             }
@@ -48,19 +48,23 @@ namespace ConsoleApp1
 
         private void RetrieveDataFromActivePort(SerialPort activePort, string portName)
         {
+            while(!activePort.IsOpen)
+            {
+                Console.WriteLine("RetrieveDataFromActivePort: activePort is not open will wait for");
+            }
             if (activePort.IsOpen)
             {
-                Console.WriteLine("{} is an open port and we are preparing" +
+                Console.WriteLine("{0} is an open port and we are preparing" +
                     " to read", portName);
                 String recievedText;
                 recievedText = activePort.ReadLine();
                 Console.WriteLine("Completed reading data as a String. " +
-                    "Recieved <><><>{}<><><> as a response", recievedText);
+                    "Recieved <><><>{0}<><><> as a response", recievedText);
             }
             else
             {
                 Console.WriteLine("PortReadingService: Something went" +
-                    " {} is now closed.", portName);
+                    " {0} is now closed.", portName);
             }
         }
     }

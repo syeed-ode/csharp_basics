@@ -12,18 +12,19 @@ namespace ConsoleApp1
 
             nameArray = SerialPort.GetPortNames();
             int numberOfPorts = nameArray.Length;
-            Console.Write("Found {} active ports.", numberOfPorts);
-            SerialPort[] activeSerialPorts = null;
+            Console.Write("Found {0} active ports. ", numberOfPorts);
+            SerialPort[] activeSerialPorts = new SerialPort[numberOfPorts];
 
             List<SerialPort> portList = new List<SerialPort>();
             for (int i = 0; i < numberOfPorts; i++)
             {
-                Console.Write("Configuring port {} ", nameArray[i]);
+                Console.Write("Configuring port {0} ", nameArray[i]);
                 activeSerialPorts[i] = new SerialPort();
                 activeSerialPorts[i].PortName = nameArray[i];
                 activeSerialPorts[i].ReadTimeout = 1500;
                 portList.Add(activeSerialPorts[i]);
             }
+            Console.WriteLine("");
             if(numberOfPorts > 0)
             {
                 return portList;
