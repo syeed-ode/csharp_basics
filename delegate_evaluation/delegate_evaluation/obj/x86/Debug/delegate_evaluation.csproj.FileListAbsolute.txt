@@ -1,0 +1,6 @@
+/Users/syeedode/visualc#_projects/csharp_basics/delegate_evaluation/delegate_evaluation/bin/Debug/delegate_evaluation.exe
+/Users/syeedode/visualc#_projects/csharp_basics/delegate_evaluation/delegate_evaluation/bin/Debug/delegate_evaluation.pdb
+/Users/syeedode/visualc#_projects/csharp_basics/delegate_evaluation/delegate_evaluation/obj/x86/Debug/delegate_evaluation.csprojResolveAssemblyReference.cache
+/Users/syeedode/visualc#_projects/csharp_basics/delegate_evaluation/delegate_evaluation/obj/x86/Debug/delegate_evaluation.csproj.CoreCompileInputs.cache
+/Users/syeedode/visualc#_projects/csharp_basics/delegate_evaluation/delegate_evaluation/obj/x86/Debug/delegate_evaluation.exe
+/Users/syeedode/visualc#_projects/csharp_basics/delegate_evaluation/delegate_evaluation/obj/x86/Debug/delegate_evaluation.pdb
