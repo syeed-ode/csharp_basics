@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace ChefIngredients
 {
-    GetSecretIngredient
-    {
-    }
+    delegate string GetSecretIngredient(int amount);
 }
