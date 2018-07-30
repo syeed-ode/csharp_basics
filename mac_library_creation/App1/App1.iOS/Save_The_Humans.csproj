@@ -150,5 +150,5 @@
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\App1\App1.projitems" Label="Shared" />
+  <Import Project="..\App1\Save_The_Humans.projitems" Label="Shared" Condition="Exists('..\App1\Save_The_Humans.projitems')" />
 </Project>

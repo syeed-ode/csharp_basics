@@ -730,6 +730,7 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v8.1": [
+      "Save_The_Humans >= 1.0.0",
       "Xamarin.Android.Support.Design >= 27.0.2",
       "Xamarin.Android.Support.v4 >= 27.0.2",
       "Xamarin.Android.Support.v7.AppCompat >= 27.0.2",
@@ -744,9 +745,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/syeedode/visualc#_projects/csharp_basics/mac_library_creation/App1/App1.Android/App1.Android.csproj",
-      "projectName": "App1.Android",
-      "projectPath": "/Users/syeedode/visualc#_projects/csharp_basics/mac_library_creation/App1/App1.Android/App1.Android.csproj",
+      "projectUniqueName": "/Users/syeedode/visualc#_projects/csharp_basics/mac_library_creation/App1/App1.Android/Save_The_Humans.csproj",
+      "projectName": "Save_The_Humans",
+      "projectPath": "/Users/syeedode/visualc#_projects/csharp_basics/mac_library_creation/App1/App1.Android/Save_The_Humans.csproj",
       "packagesPath": "/Users/syeedode/.nuget/packages/",
       "outputPath": "/Users/syeedode/visualc#_projects/csharp_basics/mac_library_creation/App1/App1.Android/obj",
       "projectStyle": "PackageReference",
@@ -761,7 +762,11 @@
       },
       "frameworks": {
         "monoandroid81": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/syeedode/visualc#_projects/csharp_basics/mac_library_creation/App1/App1.Android/Save_The_Humans.csproj": {
+              "projectPath": "/Users/syeedode/visualc#_projects/csharp_basics/mac_library_creation/App1/App1.Android/Save_The_Humans.csproj"
+            }
+          }
         }
       }
     },
@@ -795,5 +800,16 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1606",
+      "level": "Error",
+      "message": "Cycle detected. \n  Save_The_Humans (>= 1.0.0) -> Save_The_Humans (>= 1.0.0) -> Save_The_Humans (>= 1.0.0).",
+      "libraryId": "Save_The_Humans",
+      "targetGraphs": [
+        "MonoAndroid,Version=v8.1"
+      ]
+    }
+  ]
 }

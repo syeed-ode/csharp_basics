@@ -90,6 +90,6 @@
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
-  <Import Project="..\App1\App1.projitems" Label="Shared" />
+  <Import Project="..\App1\Save_The_Humans.projitems" Label="Shared" Condition="Exists('..\App1\Save_The_Humans.projitems')" />
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
