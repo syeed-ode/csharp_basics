@@ -5,17 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Save_the_Humans"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Save the Humans" Height="700" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="85*"/>
-            <ColumnDefinition Width="555*"/>
-            <ColumnDefinition Width="152*"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="320*"/>
-            <RowDefinition Height="99*"/>
+            <RowDefinition/>
+            <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
-
+        <Button x:Name="startButton" Content="Start!" Grid.Row="1" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"/>
+        <ProgressBar Grid.Column="1" Grid.Row="2" Height="20"/>
+        <StackPanel Grid.Column="2" Margin="20,32,10,33" Orientation="Vertical" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" Text="Avoid These" FontSize="18" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+            <ContentControl Content="ContentControl" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"/>
+        </StackPanel>
+        <Canvas x:Name="playArea" Margin="215,95,0,0" Grid.ColumnSpan="3">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFF1264B" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
     </Grid>
 </Window>
