@@ -13,7 +13,7 @@
             </Grid>
         </ControlTemplate>
     </Window.Resources>
-    <Grid Background="Black">
+    <Grid x:Name="grid" Background="Black" MouseMove="grid_MouseMove" MouseLeave="grid_MouseLeave">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="140"/>
             <ColumnDefinition/>
@@ -37,7 +37,7 @@
                     <GradientStop Color="#FF87EE40" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <StackPanel x:Name="human" Orientation="Vertical">
+            <StackPanel x:Name="human" Orientation="Vertical" MouseDown="human_MouseDown">
                 <Ellipse Fill="White" Stroke="Black" Margin="0,0,0.021,0" Height="10" Width="10"/>
                 <Rectangle Fill="White" Stroke="Black" Margin="0,0,0.021,0" Height="25" Width="10"/>
             </StackPanel>
@@ -48,7 +48,7 @@
                        Stroke="Black"
                        Height="50" Width="50"
                        Grid.RowSpan="2" VerticalAlignment="Top" 
-                       RenderTransformOrigin="0.5,0.5">
+                       RenderTransformOrigin="0.5,0.5" MouseEnter="target_MouseEnter">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

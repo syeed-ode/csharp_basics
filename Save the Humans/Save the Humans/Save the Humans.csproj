@@ -55,6 +55,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="GameStarter.cs" />
+    <Compile Include="Grid.cs" />
+    <Compile Include="Human.cs" />
     <Compile Include="Target.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

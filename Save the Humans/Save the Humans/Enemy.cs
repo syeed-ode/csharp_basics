@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using System.Windows.Input;
 
 namespace Save_the_Humans
 {
@@ -27,6 +28,13 @@ namespace Save_the_Humans
                 , "(Canvas.Top)");
 
             playArea.Children.Add(enemy);
+            enemy.MouseEnter += Enemy_MouseEnter;
+        }
+
+        private void Enemy_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (humanCaptured)
+                EndTheGame();
         }
 
         private void AnimateEnemy(ContentControl enemy, double startPosition, double endPosition, string animationProperty)

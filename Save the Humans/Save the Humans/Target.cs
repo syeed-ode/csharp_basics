@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Threading;
+using System.Windows.Input;
+using System.Windows.Controls;
 
 namespace Save_the_Humans
 {
@@ -29,6 +28,20 @@ namespace Save_the_Humans
                 humanCaptured = false;
                 startButton.Visibility = Visibility.Visible;
                 playArea.Children.Add(gameOverText);
+            }
+        }
+
+        private void target_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if(targetTimer.IsEnabled && humanCaptured)
+            {
+                progressBar.Value = 0;
+                Canvas.SetLeft(target, random.Next(100, (int)playArea.ActualWidth - 100));
+                Canvas.SetTop(target, random.Next(100, (int)playArea.ActualHeight - 100));
+                Canvas.SetLeft(human, random.Next(100, (int)playArea.ActualWidth - 100));
+                Canvas.SetTop(human, random.Next(100, (int)playArea.ActualHeight - 100));
+                humanCaptured = false;
+                human.IsHitTestVisible = true;
             }
         }
     }
