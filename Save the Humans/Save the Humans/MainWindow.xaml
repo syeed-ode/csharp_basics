@@ -9,7 +9,27 @@
     <Window.Resources>
         <ControlTemplate x:Key="EnemyTemplate" TargetType="{x:Type ContentControl}">
             <Grid>
-                <Ellipse Stroke="Black" Height="100" Width="75" Fill="Red"/>
+                <Ellipse Fill="Gray" Stroke="Black" Height="100" Width="75"/>
+                <Ellipse Fill="Black" Stroke="Black" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="25" Margin="40,20,70,0" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="10"/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse Fill="Black" Stroke="Black" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="25" Margin="70,20,40,0" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-10"/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
             </Grid>
         </ControlTemplate>
     </Window.Resources>
@@ -23,13 +43,13 @@
             <RowDefinition/>
             <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
-        
+
         <Button x:Name="startButton" Content="Start!" Click="startButton_Click"
                 Grid.Row="1" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center"/>
         <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="20"/>
-        
+
         <Canvas x:Name="playArea" Grid.ColumnSpan="3">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -37,7 +57,7 @@
                     <GradientStop Color="#FF87EE40" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <StackPanel x:Name="human" Orientation="Vertical" MouseDown="human_MouseDown">
+            <StackPanel x:Name="human" Orientation="Vertical" MouseDown="human_MouseDown" > <!-- Canvas.Left="395" Canvas.Top="290"> -->
                 <Ellipse Fill="White" Stroke="Black" Margin="0,0,0.021,0" Height="10" Width="10"/>
                 <Rectangle Fill="White" Stroke="Black" Margin="0,0,0.021,0" Height="25" Width="10"/>
             </StackPanel>

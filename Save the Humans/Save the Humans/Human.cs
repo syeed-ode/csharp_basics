@@ -10,7 +10,7 @@ namespace Save_the_Humans
 {
     public partial class MainWindow : Window
     {
-        bool humanCaptured = false;
+        
 
         private void human_MouseDown(object sender, MouseButtonEventArgs e)
         {
