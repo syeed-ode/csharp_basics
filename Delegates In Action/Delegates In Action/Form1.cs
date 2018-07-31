@@ -36,7 +36,7 @@ namespace Delegates_In_Action
                 MessageBox.Show("I'll add " + ingredientMethod((int)amountNumericUpDown.Value));
             else
                 MessageBox.Show("I don't have a secret ingredient");
-        }
+         }
 
         private void AmysButton_Click(object sender, EventArgs e)
         {
