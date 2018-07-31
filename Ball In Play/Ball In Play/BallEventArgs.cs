@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ball_In_Play
 {
-    class BallEventArgs : EventArgs
+    public class BallEventArgs : EventArgs
     {
         public int Trajectory { get; private set; }
         public int Distance { get; private set; }

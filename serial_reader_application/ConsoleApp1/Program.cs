@@ -15,7 +15,7 @@ namespace ConsoleApp1
             while("stop" != stop.ToLowerInvariant())
             {
                 Console.WriteLine("Beginning to process any available COMM port:");
-                PortReadingService portReadingService = new PortReadingService();
+                PortManagingService portReadingService = new PortManagingService();
                 portReadingService.ParallelProcessAllPorts();
                 Console.WriteLine();
                 stop = Console.ReadLine();

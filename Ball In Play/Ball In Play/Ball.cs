@@ -14,8 +14,10 @@ namespace Ball_In_Play
         {
             EventHandler ballInPlay = BallInPlay;
 
-            if (ballInPlay != null)
+            if(ballInPlay != null)
+            {
                 ballInPlay(this, e);
+            }
         }
     }
 }
