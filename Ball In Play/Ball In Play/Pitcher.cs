@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,9 @@ namespace Ball_In_Play
 {
     class Pitcher
     {
+        public ObservableCollection<string> PitcherSays { get; internal set; }
+        int pitchNumber = 0;
+
         public Pitcher(Ball ball)
         {
             ball.BallInPlay += ball_BallInPlay;
@@ -15,7 +19,27 @@ namespace Ball_In_Play
 
         private void ball_BallInPlay(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            pitchNumber++;
+            if( e is BallEventArgs)
+            {
+                BallEventArgs ballEventArgs = e as BallEventArgs;
+                if ((ballEventArgs.Distance < 95) && (ballEventArgs.Trajectory < 60))
+                    CatchBall();
+                else
+                    CoverFirstBase();
+            }
+        }
+
+        private void CatchBall()
+        {
+            PitcherSays.Add("Pitch #" + pitchNumber 
+                + ": I caught the ball");
+        }
+
+        private void CoverFirstBase()
+        {
+            PitcherSays.Add("Pitch #" + pitchNumber
+                + ": I covered first base");
         }
     }
 }

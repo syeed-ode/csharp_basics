@@ -14,24 +14,24 @@ namespace ConsoleApp1
         public void ParallelProcessAllPorts()
         {
             // allActivePorts.AsParallel().Select(port => ReadFromActivePort(port));
-            Console.WriteLine("ParallelProcessAllPorts: Calling "
+            Console.WriteLine("ParallelProcessAllPorts: Calling| "
                 + "portManager to getActivePorts.");
             IEnumerable<SerialPort> allActivePorts = 
                 portManager.GetActivePorts();
             if(null == allActivePorts)
             {
-                Console.WriteLine("Recieved no active ports. Processing "
-                    + "will not be started");
+                Console.WriteLine("ParallelProcessAllPorts: Recieved no active ports. Processing will not be started");
                 return;
             }
-            Console.WriteLine("ParallelProcessAllPorts: Attempting "
-                + "to read from all ports in Parallel");
+            Console.WriteLine("ParallelProcessAllPorts: Attempting to read from all ports in Parallel");
             System.Threading.Tasks.Parallel
                 .ForEach(allActivePorts
                     , port => {
-                        PortReadingService readingService = new PortReadingService
-                            ReadFromActivePort(port)
-                        });
+                        Console.WriteLine("ParallelProcessAllPorts: Kicking off a tasks and event handler for: {0} | in DataProcessor", port.PortName);
+                        DataProcessor readingService = new DataProcessor(new DataReceiver(), port);
+                        Console.WriteLine("ParallelProcessAllPorts: Kicking off a tasks and event handler for: {0} | in StackOverflowDataReceiver", port.PortName);
+                        StackOverflowDataReceiver sodr = new StackOverflowDataReceiver(port);
+                    });
         }
 
         private void ReadFromActivePort(SerialPort activePort)
@@ -39,14 +39,14 @@ namespace ConsoleApp1
             if (activePort != null)
             {
                 string portName = activePort.PortName;
-                Console.WriteLine("PortReadingService: Preparing " +
+                Console.WriteLine("PortReadingService: Preparing| " +
                     "to read from port {0} verifying its open."
                     , portName);
                 RetrieveDataFromActivePort(activePort, portName);
             }
             else
             {
-                Console.WriteLine("PortReadingService: Something went" +
+                Console.WriteLine("PortReadingService: Something went|" +
                     " wrong received a null port");
             }
         }
